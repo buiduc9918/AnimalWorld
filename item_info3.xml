@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ItemData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <name>skill 4</name>
+  <description>you can destroy 3 rows, 3 columns</description>
+  <number>1</number>
+</ItemData>

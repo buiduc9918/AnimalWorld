@@ -1,0 +1,620 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 497
+    y: 141
+    width: 321
+    height: 573
+  m_ShowMode: 0
+  m_Title: Burst Inspector
+  m_RootView: {fileID: 5}
+  m_MinSize: {x: 50, y: 71}
+  m_MaxSize: {x: 4000, y: 4021}
+  m_Maximized: 0
+--- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 0
+    y: 43
+    width: 1920
+    height: 1037
+  m_ShowMode: 4
+  m_Title: Project
+  m_RootView: {fileID: 6}
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_Maximized: 1
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12060, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectBrowser
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 1920
+    height: 987
+  m_MinSize: {x: 230, y: 273}
+  m_MaxSize: {x: 10000, y: 10023}
+  m_ActualView: {fileID: 10}
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: BurstInspectorGUI
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 321
+    height: 573
+  m_MinSize: {x: 50, y: 71}
+  m_MaxSize: {x: 4000, y: 4021}
+  m_ActualView: {fileID: 9}
+  m_Panes:
+  - {fileID: 9}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 4}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 321
+    height: 573
+  m_MinSize: {x: 50, y: 71}
+  m_MaxSize: {x: 4000, y: 4021}
+  vertical: 0
+  controlID: 2637
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 7}
+  - {fileID: 3}
+  - {fileID: 8}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1920
+    height: 1037
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_UseTopView: 1
+  m_TopViewHeight: 30
+  m_UseBottomView: 1
+  m_BottomViewHeight: 20
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12011, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1920
+    height: 30
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LastLoadedLayoutName: 
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12042, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 1017
+    width: 1920
+    height: 20
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+--- !u!114 &9
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044207dff891379ab68ba54b0d4307b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 50, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Burst Inspector
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Burst Inspector\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 21
+    width: 321
+    height: 552
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+  _targetCpu: 0
+  _disasmKind: 0
+  _oldDisasmKind: 0
+  _previousTargetIndex: -1
+  _safetyChecks: 0
+  _showBranchMarkers: 1
+  _enhancedDisassembly: 1
+  _searchFilterJobs: 
+  _showUnityNamespaceJobs: 1
+  _showDOTSGeneratedJobs: 1
+  _focusTargetJob: 1
+  _searchFilterAssembly: 
+  _sameTargetButDifferentAssemblyKind: 0
+  _scrollPos: {x: 0, y: 0}
+  _searchBarVisible: 1
+  _selectedItem: 
+  targetNames:
+  - Doc.CodeSamples.Collections.Tests.ExampleJob - (IJob)
+  - Doc.CodeSamples.Collections.Tests.ExamplesCollections.MyJob - (IJob)
+  - Doc.CodeSamples.Collections.Tests.ExamplesCollections.MyParallelJob - (IJobParallelFor)
+  - PaintDotNet.Data.PhotoshopFileType.PDNAlphaMaskJob - (IJob)
+  - PaintDotNet.Data.PhotoshopFileType.PDNDecoderJob - (IJobParallelFor)
+  - Unity.Burst.Intrinsics.X86.DoGetCSRTrampoline()
+  - Unity.Burst.Intrinsics.X86.DoSetCSRTrampoline(int)
+  - Unity.Collections.AllocatorManager.SlabAllocator.Try(System.IntPtr, Unity.Collections.AllocatorManager.Block&)
+  - Unity.Collections.AllocatorManager.StackAllocator.Try(System.IntPtr, Unity.Collections.AllocatorManager.Block&)
+  - Unity.Collections.LowLevel.Unsafe.UnsafeDisposeJob - (IJob)
+  - Unity.Collections.LowLevel.Unsafe.UnsafeHashMapDataDisposeJob - (IJob)
+  - Unity.Collections.LowLevel.Unsafe.UnsafeHashMapDisposeJob - (IJob)
+  - Unity.Collections.LowLevel.Unsafe.UnsafeStream.ConstructJob - (IJob)
+  - Unity.Collections.LowLevel.Unsafe.UnsafeStream.ConstructJobList - (IJob)
+  - Unity.Collections.LowLevel.Unsafe.UnsafeStream.DisposeJob - (IJob)
+  - Unity.Collections.NativeArrayDisposeJob - (IJob)
+  - Unity.Collections.NativeListDisposeJob - (IJob)
+  - Unity.Collections.NativeQueueDisposeJob - (IJob)
+  - Unity.Collections.NativeReferenceDisposeJob - (IJob)
+  - Unity.Collections.NativeStream.ConstructJob - (IJob)
+  - Unity.Collections.NativeStream.ConstructJobList - (IJob)
+  - Unity.Collections.RewindableAllocator.Try(System.IntPtr, Unity.Collections.AllocatorManager.Block&)
+  - Unity.Collections.xxHash3.Hash128Long(System.Byte*, System.Byte*, long, System.Byte*,
+    Unity.Mathematics.uint4&)
+  - Unity.Collections.xxHash3.Hash64Long(System.Byte*, System.Byte*, long, System.Byte*)
+  - Unity.Properties.Internal.PropertiesEditorInitialization.InitializePropertiesJob
+    - (IJob)
+  - UnityEditor.PhysicsDebugWindow.ReadContactsJob - (IJob)
+  - UnityEditor.U2D.Animation.BatchedDrawing.CreateSolidArcVertices(Unity.Collections.LowLevel.Unsafe.UnsafeList`1[Unity.Mathematics.float3]&,
+    int, Unity.Collections.NativeArray`1[Unity.Mathematics.float3]&, Unity.Mathematics.float3&,
+    int, float)
+  - UnityEditor.U2D.Animation.BatchedDrawing.CreateSolidArcWithOutlineVertices(Unity.Collections.LowLevel.Unsafe.UnsafeList`1[Unity.Mathematics.float3]&,
+    int, Unity.Collections.NativeArray`1[Unity.Mathematics.float3]&, Unity.Mathematics.float3&,
+    int, float, float)
+  - UnityEditor.U2D.Animation.BatchedDrawing.SetDiscSectionPoints(Unity.Collections.NativeArray`1[Unity.Mathematics.float3]&,
+    int, Unity.Mathematics.float3&, Unity.Mathematics.float3&, float)
+  - UnityEditor.U2D.Animation.BiharmonicsJob - (IJob)
+  - UnityEditor.U2D.Animation.BoundedBiharmonicWeightsGenerator.CalculateInternal_(Unity.Collections.NativeArray`1[Unity.Mathematics.float2]&,
+    Unity.Collections.NativeArray`1[System.Int32]&, Unity.Collections.NativeArray`1[Unity.Mathematics.int2]&,
+    Unity.Collections.NativeArray`1[Unity.Mathematics.float2]&, Unity.Collections.NativeArray`1[Unity.Mathematics.int2]&,
+    Unity.Collections.NativeArray`1[System.Int32]&, int, int, int, Unity.Collections.NativeArray`1[UnityEngine.BoneWeight]&)
+  - UnityEditor.U2D.Animation.BoundedBiharmonicWeightsGenerator.SampleBones_(Unity.Collections.NativeArray`1[Unity.Mathematics.float2]&,
+    Unity.Collections.NativeArray`1[Unity.Mathematics.int2]&, int, Unity.Collections.NativeArray`1[Unity.Mathematics.float2]&)
+  - UnityEditor.U2D.Animation.BoundedBiharmonicWeightsGenerator.TriangulateInternal_(Unity.Collections.NativeArray`1[System.Int32]&,
+    System.Int32&, Unity.Collections.NativeArray`1[Unity.Mathematics.float2]&, Unity.Collections.NativeArray`1[System.Int32]&,
+    System.Int32&)
+  - UnityEditor.U2D.Animation.BoundedBiharmonicWeightsGenerator.TriangulateSamplers_(Unity.Collections.NativeArray`1[Unity.Mathematics.float2]&,
+    Unity.Collections.NativeArray`1[Unity.Mathematics.float2]&, System.Int32&, Unity.Collections.NativeArray`1[System.Int32]&,
+    System.Int32&)
+  - UnityEditor.U2D.Animation.TessellateJob - (IJob)
+  - UnityEditor.U2D.Animation.TriangulateJob - (IJob)
+  - UnityEditor.U2D.Animation.TriangulationUtility.SubdivideBurst(Unity.Collections.Allocator,
+    Unity.Mathematics.float2*, int, Unity.Mathematics.int2*, int, Unity.Mathematics.float2*,
+    System.Int32*, Unity.Mathematics.int2*, int, float, float, int, int, Unity.Mathematics.int3*)
+  - UnityEditor.U2D.Animation.TriangulationUtility.TessellateBurst(Unity.Collections.Allocator,
+    Unity.Mathematics.float2*, int, Unity.Mathematics.int2*, int, Unity.Mathematics.float2*,
+    System.Int32*, Unity.Mathematics.int2*, int, Unity.Mathematics.int3*)
+  - UnityEditor.U2D.Animation.TriangulationUtility.ValidateCollinear(Unity.Mathematics.float2*,
+    int, float)
+  - UnityEditor.U2D.Aseprite.Common.FindTightRectJob - (IJobParallelFor)
+  - UnityEditor.U2D.Aseprite.Common.ImagePacker.BurstedBlit(UnityEngine.Color32*,
+    Unity.Mathematics.int4&, Unity.Mathematics.int4&, int, int, UnityEngine.Color32*)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Addition(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.BurnChannel(byte, byte)
+  - UnityEditor.U2D.Aseprite.PixelBlends.ClipColor(System.Single&, System.Single&,
+    System.Single&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.ColorBlend(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.ColorBurn(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.ColorDodge(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Darken(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Difference(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.DifferenceChannel(byte, byte)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Divide(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.DivideChannel(byte, byte)
+  - UnityEditor.U2D.Aseprite.PixelBlends.DivideUnsignedByte(byte, byte)
+  - UnityEditor.U2D.Aseprite.PixelBlends.DodgeChannel(byte, byte)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Exclusion(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.ExclusionChannel(byte, byte)
+  - UnityEditor.U2D.Aseprite.PixelBlends.GetLuminosity(float, float, float)
+  - UnityEditor.U2D.Aseprite.PixelBlends.GetSaturation(float, float, float)
+  - UnityEditor.U2D.Aseprite.PixelBlends.HardLight(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.HardLightChannel(byte, byte)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Hue(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Lighten(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Luminosity(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.MaxRef(System.Single&, System.Single&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.MinRef(System.Single&, System.Single&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Multiply(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.MultiplyUnsignedByte(byte, byte)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Normal(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Overlay(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Saturation(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Screen(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.ScreenUnsignedByte(byte, byte)
+  - UnityEditor.U2D.Aseprite.PixelBlends.SetLuminosity(System.Single&, System.Single&,
+    System.Single&, float)
+  - UnityEditor.U2D.Aseprite.PixelBlends.SetSaturation(System.Single&, System.Single&,
+    System.Single&, float)
+  - UnityEditor.U2D.Aseprite.PixelBlends.SoftLight(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.PixelBlends.SoftLightChannel(byte, byte)
+  - UnityEditor.U2D.Aseprite.PixelBlends.Subtract(UnityEngine.Color32&, UnityEngine.Color32&,
+    UnityEngine.Color32&)
+  - UnityEditor.U2D.Aseprite.TextureTasks.AddOpacity(Unity.Collections.NativeArray`1[UnityEngine.Color32]&,
+    float)
+  - UnityEditor.U2D.Aseprite.TextureTasks.FitRectInsideRect(UnityEngine.RectInt&,
+    UnityEngine.RectInt&)
+  - UnityEditor.U2D.Aseprite.TextureTasks.FlipTextureY(Unity.Collections.NativeArray`1[UnityEngine.Color32]&,
+    int, int)
+  - UnityEditor.U2D.Aseprite.TextureTasks.GetCombinedRect(Unity.Collections.NativeArray`1[UnityEngine.RectInt]&,
+    UnityEngine.RectInt&)
+  - UnityEditor.U2D.Aseprite.TextureTasks.MergeTextures(Unity.Collections.NativeArray`1[System.IntPtr]&,
+    Unity.Collections.NativeArray`1[UnityEngine.RectInt]&, Unity.Collections.NativeArray`1[UnityEditor.U2D.Aseprite.BlendModes]&,
+    UnityEditor.U2D.Aseprite.TextureTasks.MergeOutput&)
+  - UnityEditor.U2D.Common.FindTightRectJob - (IJobParallelFor)
+  - UnityEditor.U2D.Common.ImagePacker.BurstedBlit(Unity.Collections.NativeArray`1[UnityEngine.Color32]&,
+    Unity.Mathematics.int4&, Unity.Mathematics.int4&, int, int, Unity.Collections.NativeArray`1[UnityEngine.Color32]&)
+  - UnityEditor.U2D.Common.SpriteAtlasPacker.UPack.ApplyMask(UnityEditor.U2D.Common.SpriteAtlasPacker.UPackConfig&,
+    UnityEditor.U2D.Common.SpriteAtlasPacker.AtlasMask&, UnityEditor.U2D.Common.SpriteAtlasPacker.PixelMask&,
+    int, int)
+  - UnityEditor.U2D.Common.SpriteAtlasPacker.UPack.ApplyMask(UnityEditor.U2D.Common.SpriteAtlasPacker.UPackConfig&,
+    UnityEditor.U2D.Common.SpriteAtlasPacker.AtlasMask&, UnityEditor.U2D.Common.SpriteAtlasPacker.PixelMask&,
+    int, int, int, int)
+  - UnityEditor.U2D.Common.SpriteAtlasPacker.UPack.Pad(UnityEditor.U2D.Common.SpriteAtlasPacker.PixelMask&,
+    UnityEngine.Color32&, byte, int, int, int, int)
+  - UnityEditor.U2D.Common.SpriteAtlasPacker.UPack.Pixelate(UnityEditor.U2D.Common.SpriteAtlasPacker.PixelMask&,
+    Unity.Mathematics.int2&, UnityEngine.Color32*, UnityEngine.Color32&, byte, int,
+    int, int, int)
+  - UnityEditor.U2D.Common.SpriteAtlasPacker.UPack.Rasterize(UnityEditor.U2D.Common.SpriteAtlasPacker.UPackConfig&,
+    UnityEngine.Color32*, Unity.Mathematics.int2&, UnityEngine.Vector2*, int, System.Int32*,
+    int, UnityEditor.U2D.Common.SpriteAtlasPacker.PixelMask&, int, int)
+  - UnityEditor.U2D.Common.SpriteAtlasPacker.UPack.RasterizeTriangle(UnityEditor.U2D.Common.SpriteAtlasPacker.UPackConfig&,
+    UnityEditor.U2D.Common.SpriteAtlasPacker.PixelMask&, UnityEngine.Color32*, Unity.Mathematics.int2&,
+    UnityEngine.Color32&, byte, Unity.Mathematics.float2&, Unity.Mathematics.float2&,
+    Unity.Mathematics.float2&, int, int)
+  - UnityEditor.U2D.Common.SpriteAtlasPacker.UPack.SpriteFitter - (IJob)
+  - UnityEditor.U2D.Common.SpriteAtlasPacker.UPack.SpriteRaster - (IJob)
+  - UnityEditor.U2D.Common.SpriteAtlasPacker.UPack.TestMask(UnityEditor.U2D.Common.SpriteAtlasPacker.AtlasMask&,
+    UnityEditor.U2D.Common.SpriteAtlasPacker.PixelMask&, int, int)
+  - UnityEditor.U2D.Common.SpriteAtlasPacker.UPack.TestMask(UnityEditor.U2D.Common.SpriteAtlasPacker.AtlasMask&,
+    UnityEditor.U2D.Common.SpriteAtlasPacker.PixelMask&, int, int, int, int)
+  - UnityEditor.U2D.PSD.ExtractLayerTask.ConvertBufferJob - (IJobParallelFor)
+  - UnityEditor.U2D.PSD.FlattenImageTask.FlattenImageInternalJob - (IJobParallelFor)
+  - UnityEditor.UIElements.UIElementsEditorInitialization.InitializeUIElementsJob
+    - (IJob)
+  - UnityEngine.LightProbesQuery.LightProbesQueryDisposeJob - (IJob)
+  - UnityEngine.LightTransport.PostProcessing.AddSHJob - (IJobParallelFor)
+  - UnityEngine.LightTransport.PostProcessing.ConvolveJob - (IJobParallelFor)
+  - UnityEngine.LightTransport.PostProcessing.UnityfyJob - (IJobParallelFor)
+  - UnityEngine.U2D.Animation.BoneDeformBatchedJob - (IJobParallelFor)
+  - UnityEngine.U2D.Animation.BurstedSpriteSkinUtilities.SetVertexPositionFromByteBuffer(Unity.Collections.NativeArray`1[System.Byte]&,
+    Unity.Collections.NativeArray`1[System.Int32]&, Unity.Collections.NativeArray`1[UnityEngine.Vector3]&,
+    int)
+  - UnityEngine.U2D.Animation.BurstedSpriteSkinUtilities.ValidateBoneWeights(UnityEngine.U2D.Animation.NativeCustomSlice`1[UnityEngine.BoneWeight]&,
+    int)
+  - UnityEngine.U2D.Animation.CalculateSpriteSkinAABBJob - (IJobParallelFor)
+  - UnityEngine.U2D.Animation.CopySpriteRendererBoneTransformBuffersJob - (IJobParallelFor)
+  - UnityEngine.U2D.Animation.CopySpriteRendererBuffersJob - (IJobParallelFor)
+  - UnityEngine.U2D.Animation.FillPerSkinJobSingleThread - (IJob)
+  - UnityEngine.U2D.Animation.LocalToWorldTransformAccessJob - (IJobParallelForTransform)
+  - UnityEngine.U2D.Animation.MeshUtilities.AddToEdgeMap(Unity.Mathematics.int2&,
+    Unity.Collections.LowLevel.Unsafe.UnsafeHashMap`2[System.Int32,Unity.Mathematics.int3]&)
+  - UnityEngine.U2D.Animation.MeshUtilities.GetFirstUnusedIndex(Unity.Collections.NativeArray`1[System.Boolean]&)
+  - UnityEngine.U2D.Animation.MeshUtilities.SortEdges(Unity.Collections.NativeArray`1[Unity.Mathematics.int2]&,
+    Unity.Collections.NativeArray`1[Unity.Mathematics.int2]&)
+  - UnityEngine.U2D.Animation.PrepareDeformJob - (IJob)
+  - UnityEngine.U2D.Animation.SkinDeformBatchedJob - (IJobParallelFor)
+  - UnityEngine.U2D.Animation.UpdateBoundJob - (IJobParallelFor)
+  - UnityEngine.U2D.Animation.WorldToLocalTransformAccessJob - (IJobParallelForTransform)
+  - UnityEngine.U2D.SpriteShapeGenerator - (IJob)
+  - UnityEngine.U2D.SpriteShapeGenerator.UTessellator(UnityEngine.U2D.SpriteShapeSegment&,
+    Unity.Mathematics.float2*, int, System.UInt16*, System.Int32&, System.Byte*,
+    int, System.Int32&, Unity.Collections.Allocator)
+  - UnityEngine.UIElements.Painter2D.Painter2DJob - (IJobParallelFor)
+  - UnityEngine.UIElements.UIR.MeshGenerator.TessellationJob - (IJobParallelFor)
+  - UnityEngine.UIElements.UIR.OpacityIdAccelerator.OpacityIdUpdateJob - (IJobParallelFor)
+  - UnityEngine.UIElements.UITKTextJobSystem.GenerateTextJobData - (IJobParallelFor)
+  - UnityEngine.UIElements.UITKTextJobSystem.PrepareTextJobData - (IJobParallelFor)
+  treeViewState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: ebffffffecffffffedffffffeeffffffeffffffff0fffffff1fffffff2fffffff3fffffff4fffffff5fffffff6fffffff7fffffff8fffffff9fffffffafffffffbfffffffcfffffffdfffffffeffffffffffffff00000000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 0
+      m_TrimLeadingAndTrailingWhitespace: 0
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+  _isCompileError: 0
+  _prevWasCompileError: 0
+  _smellTest: 0
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_TitleContent:
+    m_Text: Project
+    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+    m_TextWithWhitespace: "Project\u200B"
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 1920
+    height: 987
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_ContainerData: []
+    m_OverlaysVisible: 1
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Assets
+    m_Globs: []
+    m_ProductIds: 
+    m_AnyWithAssetOrigin: 0
+    m_OriginalText: 
+    m_ImportLogFlags: 0
+    m_FilterByTypeIntersection: 0
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: E:\UnityProject\AnimalWorld\AnimalWorld
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: e48d0000
+    m_LastClickedID: 36324
+    m_ExpandedIDs: 00000000a08d0000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_TrimLeadingAndTrailingWhitespace: 0
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 00000000a08d0000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_TrimLeadingAndTrailingWhitespace: 0
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_TrimLeadingAndTrailingWhitespace: 0
+      m_ClientGUIView: {fileID: 0}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 64
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 207
