@@ -184,6 +184,7 @@ DocProject/Help/html
 # Click-Once directory
 publish/
 *unityparkage
+*.unityparkage
 # Publish Web Output
 *.[Pp]ublish.xml
 *.azurePubxml
