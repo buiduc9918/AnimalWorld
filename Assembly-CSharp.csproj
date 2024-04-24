@@ -1202,6 +1202,10 @@
       <Project>{11A991DB-7B20-B063-0463-659E0B6989F6}</Project>
       <Name>Unity.AdaptivePerformance.Simulator.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.EditorCoroutines.Editor.csproj">
+      <Project>{52A8D2DA-A484-8F6C-F676-D3153D596A67}</Project>
+      <Name>Unity.EditorCoroutines.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
       <Project>{9D5F910F-FA5F-439C-AEFD-23E1272FF34F}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
@@ -1225,6 +1229,10 @@
     <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
       <Project>{5148155B-D062-87D5-5661-57D291E7554D}</Project>
       <Name>Unity.AI.Navigation.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Play.Publisher.Editor.csproj">
+      <Project>{C7E9986A-916B-15E1-858F-CA53B73A5BC9}</Project>
+      <Name>Unity.Play.Publisher.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{108B87FB-AC7F-1B65-9854-20FC25E5FC83}</Project>
@@ -1289,6 +1297,10 @@
     <ProjectReference Include="Unity.Notifications.iOS.csproj">
       <Project>{AECAC186-0692-F77B-9104-31F30965A66B}</Project>
       <Name>Unity.Notifications.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEditorBridgeDev.001.csproj">
+      <Project>{D1B02FCF-2D7A-1B59-A5B5-3D2131A9276F}</Project>
+      <Name>Unity.InternalAPIEditorBridgeDev.001</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
