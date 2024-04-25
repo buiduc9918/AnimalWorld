@@ -35,7 +35,7 @@ bld/
 [Oo]ut/
 [Ll]og/
 [Ll]ogs/
-[Pp]roject[Ss]ettings/
+ProjectSettings/
 [Uu]ser[Ss]ettings/
 # Visual Studio 2015/2017 cache/options directory
 .vs/

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections;
+using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class Gamemanager : MonoBehaviour
     public GameObject Uimanager;
     public GameObject screenmanager;
     public Notification Notification;
-
+    public int IdGame = 10102001;
     public void Awake()
     {
         if (Instance != null) DestroyImmediate(gameObject);
@@ -72,6 +73,7 @@ public class Gamemanager : MonoBehaviour
             Debug.Log("Description: " + loadedItemData[i].description);
             Debug.Log("Number: " + loadedItemData[i].number);
         }
+        StartCoroutine(Laydulieu());
     }
 
     [System.Serializable]
@@ -145,6 +147,26 @@ public class Gamemanager : MonoBehaviour
         return playerData;
     }
     // Thiet lap qua trinh khoi tao data base 
+    IEnumerator Laydulieu()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("idPc", IdGame.ToString());
+        WWW www = new WWW("http://localhost/AnimalWorld/item_info.php");
+        yield return www;
+        if (www.text == "0")
+        {
+            Debug.Log("Connected");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
 
+        }
+        else
+        {
+            Debug.Log("Disconnectted! " + " " + www.text);
+        }
+    }
+    public void Vertifire()
+    {
+
+    }
 }
 
