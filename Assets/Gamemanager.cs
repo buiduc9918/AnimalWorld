@@ -253,7 +253,7 @@ public class Gamemanager : MonoBehaviour
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string sql = "INSERT INTO store_market (item, cost) VALUES (9, 10)";
+                string sql = "INSERT INTO store_market (item, cost) VALUES (20, 10)";
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     int rowsAffected = cmd.ExecuteNonQuery();
