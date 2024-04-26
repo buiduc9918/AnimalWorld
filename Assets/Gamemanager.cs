@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections;
+using System.Data;
 using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
@@ -146,27 +149,41 @@ public class Gamemanager : MonoBehaviour
         stream.Close();
         return playerData;
     }
-    // Thiet lap qua trinh khoi tao data base 
+
     IEnumerator Laydulieu()
     {
-        WWWForm form = new WWWForm();
-        form.AddField("idPc", IdGame.ToString());
-        WWW www = new WWW("http://localhost/AnimalWorld/item_info.php");
-        yield return www;
-        if (www.text == "0")
+        string connStr = "server=localhost;user=root;database=AnimalWorld;port=3306;password=";
+        MySqlConnection conn = new MySqlConnection(connStr);
+        try
         {
-            Debug.Log("Connected");
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            Debug.Log("Connecting to MySQL...");
+            conn.Open();
 
+            string sql = "SELECT idpc FROM pc_info";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            object result = cmd.ExecuteScalar();
+            if (result != null)
+            {
+                int pcCount = Convert.ToInt32(result);
+                Debug.Log("Number of PCs in the database is: " + pcCount);
+            }
+            else
+            {
+                Debug.Log("No PC found in the database.");
+            }
         }
-        else
+        catch (Exception ex)
         {
-            Debug.Log("Disconnectted! " + " " + www.text);
+            Debug.Log("Error connecting to MySQL: " + ex.Message);
         }
+        finally
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+        }
+        Debug.Log("Done.");
+        yield break; // Not necessary to yield further
     }
-    public void Vertifire()
-    {
 
-    }
 }
 
