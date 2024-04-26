@@ -45,21 +45,57 @@ public class Gamemanager : MonoBehaviour
 
         ItemData[] skill = new ItemData[4];
         skill[0] = new ItemData(); // Khởi tạo các phần tử của mảng
-        skill[0].name = "skill 1";
+        skill[0].id = 1;
         skill[0].description = "you can destroy one row";
-        skill[0].number = 1;
         skill[1] = new ItemData();
-        skill[1].name = "skill 2";
+        skill[1].id = 2;
         skill[1].description = "you can destroy one column";
-        skill[1].number = 1;
         skill[2] = new ItemData();
-        skill[2].name = "skill 3";
+        skill[2].id = 3;
         skill[2].description = "you can destroy one row, one column";
-        skill[2].number = 1;
         skill[3] = new ItemData();
-        skill[3].name = "skill 4";
-        skill[3].description = "you can destroy 3 rows, 3 columns";
-        skill[3].number = 1;
+        skill[3].id = 4;
+        skill[3].description = "you can destroy 1 row, 2 columns";
+        ProductData[] product = new ProductData[4];
+        product[0] = new ProductData();
+        product[0].id = 1;
+        product[0].cost = 10;
+        product[1] = new ProductData();
+        product[1].id = 2;
+        product[1].cost = 10;
+        product[2] = new ProductData();
+        product[2].id = 3;
+        product[2].cost = 10;
+        product[3] = new ProductData();
+        product[3].id = 4;
+        product[3].cost = 10;
+
+        PlayerData[] playerDatas = new PlayerData[1];
+        playerDatas[0] = new PlayerData();
+        playerDatas[0].name = "admin";
+        playerDatas[0].idpc = 10102001;
+        playerDatas[0].item_1 = 1;
+        playerDatas[0].item_2 = 1;
+        playerDatas[0].item_3 = 1;
+        playerDatas[0].item_4 = 1;
+        playerDatas[0].score = 120;
+        playerDatas[0].money = 200;
+        playerDatas[0].level = 1;
+
+        SavePlayerDataToXML(playerDatas[0], "player_info" + 0 + ".xml");
+        PlayerData[] loadedPlayerDatas = new PlayerData[1];
+        loadedPlayerDatas[0] = LoadPlayerDataFromXML("player_info" + 0 + ".xml");
+        Debug.Log("name :" + loadedPlayerDatas[0].name);
+        Debug.Log("idpc :" + loadedPlayerDatas[0].idpc.ToString());
+        Debug.Log("item-1 :" + loadedPlayerDatas[0].item_1.ToString());
+        Debug.Log("item-2 :" + loadedPlayerDatas[0].item_2.ToString());
+        Debug.Log("item-3 :" + loadedPlayerDatas[0].item_3.ToString());
+        Debug.Log("item-4 :" + loadedPlayerDatas[0].item_4.ToString());
+
+        Debug.Log("score :" + loadedPlayerDatas[0].score.ToString());
+        Debug.Log("money :" + loadedPlayerDatas[0].money.ToString());
+        Debug.Log("level :" + loadedPlayerDatas[0].level.ToString());
+
 
         for (int i = 0; i < skill.Length; i++)
         {
@@ -72,34 +108,54 @@ public class Gamemanager : MonoBehaviour
         }
         for (int i = 0; i < 4; i++)
         {
-            Debug.Log("Name: " + loadedItemData[i].name);
+            Debug.Log("id: " + loadedItemData[i].id.ToString());
             Debug.Log("Description: " + loadedItemData[i].description);
-            Debug.Log("Number: " + loadedItemData[i].number);
+        }
+
+        for (int i = 0; i < product.Length; i++)
+        {
+            SaveProductDataToXML(product[i], "product_info" + i + ".xml");
+        }
+        ProductData[] loadedProductData = new ProductData[4];
+        for (int i = 0; i < 4; i++)
+        {
+            loadedProductData[i] = LoadProductDataFromXML("product_info" + i + ".xml");
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            Debug.Log("id: " + loadedProductData[i].id.ToString());
+            Debug.Log("cost: " + loadedProductData[i].cost.ToString());
         }
         StartCoroutine(Laydulieu());
+        StartCoroutine(InsertDataIntoTableCoroutine());
+
+        StartCoroutine(DeleteDuplicateItemsCoroutine());
+
+
     }
 
     [System.Serializable]
     public class ProductData
     {
-        public string name;
-        public string description;
-        public int number;
+        public int id;
+        public int cost;
     }
     public class ItemData
     {
-        public string name;
+        public int id;
         public string description;
-        public int number;
     }
     public class PlayerData
     {
         public string name;
-        public string description;
-        public int number;
+        public int idpc;
+        public int item_1;
+        public int item_2;
+        public int item_3;
+        public int item_4;
+        public int score;
+        public int money;
         public int level;
-        public ItemData[] itemDatas;
-        public string[] friend;
     }
 
     void SaveItemDataToXML(ItemData itemData, string filePath)
@@ -185,5 +241,59 @@ public class Gamemanager : MonoBehaviour
         yield break; // Not necessary to yield further
     }
 
+
+    private string connectionString = "server=localhost;user=user;database=AnimalWorld;port=3306;password=vungoimora";
+
+    IEnumerator InsertDataIntoTableCoroutine()
+    {
+        yield return new WaitForSeconds(1f); // Đợi 1 giây trước khi thực hiện truy vấn
+
+        try
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql = "INSERT INTO store_market (item, cost) VALUES (9, 10)";
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    Debug.Log("Rows affected: " + rowsAffected);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.Log("Error inserting data: " + ex.Message);
+        }
+    }
+    IEnumerator DeleteDuplicateItemsCoroutine()
+    {
+        yield return new WaitForSeconds(1f); // Chờ 1 giây trước khi thực hiện truy vấn
+
+        try
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                // Xóa các mục trùng lặp từ bảng store_market dựa trên cột item
+                string sql = "DELETE t1 FROM store_market t1 " +
+                             "INNER JOIN store_market t2 " +
+                             "WHERE t1.id > t2.id AND t1.item = t2.item";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    Debug.Log("Rows affected: " + rowsAffected);
+                    Debug.Log("đã xóa chùng lặp");
+
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Error deleting duplicate items: " + ex.Message);
+        }
+    }
 }
 

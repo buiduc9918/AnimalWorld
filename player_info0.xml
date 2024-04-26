@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<PlayerData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <name>admin</name>
+  <idpc>10102001</idpc>
+  <item_1>1</item_1>
+  <item_2>1</item_2>
+  <item_3>1</item_3>
+  <item_4>1</item_4>
+  <score>120</score>
+  <money>200</money>
+  <level>1</level>
+</PlayerData>
