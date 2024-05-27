@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{022D5577-FC57-2735-8670-7000AA5C58CE}</ProjectGuid>
+    <ProjectGuid>{01581593-00CC-05E8-4BB5-DE9370206819}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,22 +61,14 @@
     <Analyzer Include="E:\UnityProject\Step 2\2023.2.7f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GridManager.cs" />
+    <Compile Include="Assets\Scripts\Touch.cs" />
     <Compile Include="Assets\Tile.cs" />
-    <Compile Include="Assets\UIManager.cs" />
-    <Compile Include="Assets\Play.cs" />
+    <Compile Include="Assets\Blocks.cs" />
+    <Compile Include="Assets\Scripts\GridManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Light.cs" />
-    <Compile Include="Assets\UIController.cs" />
-    <Compile Include="Assets\Manager.cs" />
-    <Compile Include="Assets\FindRequest.cs" />
-    <Compile Include="Assets\SliderScripts.cs" />
-    <Compile Include="Assets\Gamemanager.cs" />
-    <Compile Include="Assets\ScreenManager.cs" />
-    <Compile Include="Assets\Notification.cs" />
-    <Compile Include="Assets\SoundController.cs" />
-    <Compile Include="Assets\SoundManager.cs" />
-    <Compile Include="Assets\UIController2.cs" />
+    <Compile Include="Assets\Detect.cs" />
+    <Compile Include="Assets\Scripts\Touch2.cs" />
+    <Compile Include="Assets\Scripts\Gamemanager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -402,10 +394,6 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@2.0.5\net40\unity-custom\nunit.framework.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>Assets\Plugins\MySql.Data.DLL</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
@@ -902,81 +890,69 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.AI.Navigation.Player.csproj">
-      <Project>{270B8639-DA78-4963-2DC5-C1A8D990DCCF}</Project>
-      <Name>Unity.AI.Navigation.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.AdaptivePerformance.Player.csproj">
-      <Project>{1A1DD6B9-A0CA-838C-414F-5426201536D9}</Project>
-      <Name>Unity.AdaptivePerformance.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.IK.Runtime.Player.csproj">
-      <Project>{A76622FF-8580-D4B0-64F9-6B061BB7E4BF}</Project>
-      <Name>Unity.2D.IK.Runtime.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.SpriteShape.Runtime.Player.csproj">
-      <Project>{66A0DC6E-8882-7097-5C32-B4419C26D107}</Project>
-      <Name>Unity.2D.SpriteShape.Runtime.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{5D1BE2BF-04D1-CAA5-869C-416E5149F4DA}</Project>
-      <Name>Unity.Timeline.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{688D25D1-EC85-591B-A9AC-8BD9CB364AF3}</Project>
-      <Name>UnityEngine.UI.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Collections.Player.csproj">
-      <Project>{5B1DE76B-56A4-B23F-364F-184BB8CF65CC}</Project>
-      <Name>Unity.Collections.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
-      <Project>{0E66C6E3-F4B2-94F6-9CD5-BE591B73C35C}</Project>
-      <Name>Unity.VisualScripting.Core.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InternalAPIEngineBridge.001.Player.csproj">
-      <Project>{602C44F9-1C63-7277-92F8-9558CF2E9633}</Project>
-      <Name>Unity.InternalAPIEngineBridge.001.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.2D.Animation.Runtime.Player.csproj">
-      <Project>{FF4D1BFB-9BC9-EE1C-AD2C-3B5A0493700E}</Project>
+      <Project>{81F99F73-7E23-E2CC-D1BF-C98320328DF0}</Project>
       <Name>Unity.2D.Animation.Runtime.Player</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Profiling.Core.Player.csproj">
-      <Project>{C0A076EA-074E-DACA-681D-E6AD6C069829}</Project>
-      <Name>Unity.Profiling.Core.Player</Name>
+    <ProjectReference Include="Unity.2D.IK.Runtime.Player.csproj">
+      <Project>{F6E46043-F996-2B79-530E-6324FE878E2A}</Project>
+      <Name>Unity.2D.IK.Runtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
-      <Project>{6B61C17D-D10A-303A-5D27-CF50BD0D6946}</Project>
+      <Project>{AAC37154-B4C3-415A-650E-0078602C0FA1}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.SpriteShape.Runtime.Player.csproj">
+      <Project>{D68EBFE2-EE5A-559A-7786-756A05FA72C7}</Project>
+      <Name>Unity.2D.SpriteShape.Runtime.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.Player.csproj">
-      <Project>{1815F50F-EDE4-D0AD-AF89-677425057282}</Project>
+      <Project>{5D260A96-9E22-0D2E-B54B-BF19E94C0F6B}</Project>
       <Name>Unity.2D.Tilemap.Extras.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Common.Runtime.Player.csproj">
-      <Project>{5B8A0067-1205-764B-5822-02AEB75F9E8D}</Project>
+      <Project>{A6886F6E-5B90-1666-AC4A-345BED787723}</Project>
       <Name>Unity.2D.Common.Runtime.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Player.csproj">
+      <Project>{AF1E7EDF-B1AC-9357-E8D2-99BCE54A8C87}</Project>
+      <Name>Unity.Timeline.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Player.csproj">
-      <Project>{6A9AD0F1-5940-D196-7388-C6C4B4602333}</Project>
+      <Project>{325F2EA1-853D-6F96-5AC0-FF192031AC89}</Project>
       <Name>Unity.Mathematics.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.Player.csproj">
+      <Project>{4175FC37-CA84-8EB6-BBC7-3A725EFBFEB2}</Project>
+      <Name>UnityEngine.UI.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
-      <Project>{A5CD177C-DFAD-6129-E4BA-8E8544C07244}</Project>
+      <Project>{FA8A971C-ECD9-100B-C7AD-1DAA22A81D4D}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Collections.Player.csproj">
+      <Project>{3A135925-4989-C147-2EFA-4703561D3AC1}</Project>
+      <Name>Unity.Collections.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.PixelPerfect.Player.csproj">
-      <Project>{903BF882-C1F0-F36A-30FF-5F608996DE76}</Project>
+      <Project>{7BBD183A-00C4-EBA2-81A9-FC9441CA9806}</Project>
       <Name>Unity.2D.PixelPerfect.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Burst.Player.csproj">
-      <Project>{2D4DC593-0EFF-3B4D-BD00-84EBE853A92C}</Project>
+      <Project>{4D61F92E-3A05-D38B-9ECD-34E21A744026}</Project>
       <Name>Unity.Burst.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
-      <Project>{86115B5B-B11D-29A8-A533-B083A7D62867}</Project>
+      <Project>{8D2E1315-D815-73DF-8D52-03E0A25E1FDA}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
+      <Project>{12171EDE-ACA2-69E1-E8C0-2802949DD181}</Project>
+      <Name>Unity.VisualScripting.Core.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEngineBridge.001.Player.csproj">
+      <Project>{B62B5A34-D9B3-9861-0DFE-4FB121172893}</Project>
+      <Name>Unity.InternalAPIEngineBridge.001.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

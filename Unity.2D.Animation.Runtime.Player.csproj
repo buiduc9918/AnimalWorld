@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FF4D1BFB-9BC9-EE1C-AD2C-3B5A0493700E}</ProjectGuid>
+    <ProjectGuid>{81F99F73-7E23-E2CC-D1BF-C98320328DF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.2D.Animation.Runtime</AssemblyName>
@@ -393,10 +393,6 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@2.0.5\net40\unity-custom\nunit.framework.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>Assets\Plugins\MySql.Data.DLL</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
@@ -894,27 +890,27 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.2D.Common.Runtime.Player.csproj">
-      <Project>{5B8A0067-1205-764B-5822-02AEB75F9E8D}</Project>
+      <Project>{A6886F6E-5B90-1666-AC4A-345BED787723}</Project>
       <Name>Unity.2D.Common.Runtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEngineBridge.001.Player.csproj">
-      <Project>{602C44F9-1C63-7277-92F8-9558CF2E9633}</Project>
+      <Project>{B62B5A34-D9B3-9861-0DFE-4FB121172893}</Project>
       <Name>Unity.InternalAPIEngineBridge.001.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Player.csproj">
-      <Project>{6A9AD0F1-5940-D196-7388-C6C4B4602333}</Project>
+      <Project>{325F2EA1-853D-6F96-5AC0-FF192031AC89}</Project>
       <Name>Unity.Mathematics.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Burst.Player.csproj">
-      <Project>{2D4DC593-0EFF-3B4D-BD00-84EBE853A92C}</Project>
+      <Project>{4D61F92E-3A05-D38B-9ECD-34E21A744026}</Project>
       <Name>Unity.Burst.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Collections.Player.csproj">
-      <Project>{5B1DE76B-56A4-B23F-364F-184BB8CF65CC}</Project>
+      <Project>{3A135925-4989-C147-2EFA-4703561D3AC1}</Project>
       <Name>Unity.Collections.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{688D25D1-EC85-591B-A9AC-8BD9CB364AF3}</Project>
+      <Project>{4175FC37-CA84-8EB6-BBC7-3A725EFBFEB2}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>

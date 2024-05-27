@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A76622FF-8580-D4B0-64F9-6B061BB7E4BF}</ProjectGuid>
+    <ProjectGuid>{F6E46043-F996-2B79-530E-6324FE878E2A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.2D.IK.Runtime</AssemblyName>
@@ -382,10 +382,6 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@2.0.5\net40\unity-custom\nunit.framework.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>Assets\Plugins\MySql.Data.DLL</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
@@ -883,15 +879,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.InternalAPIEngineBridge.001.Player.csproj">
-      <Project>{602C44F9-1C63-7277-92F8-9558CF2E9633}</Project>
+      <Project>{B62B5A34-D9B3-9861-0DFE-4FB121172893}</Project>
       <Name>Unity.InternalAPIEngineBridge.001.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Animation.Runtime.Player.csproj">
-      <Project>{FF4D1BFB-9BC9-EE1C-AD2C-3B5A0493700E}</Project>
+      <Project>{81F99F73-7E23-E2CC-D1BF-C98320328DF0}</Project>
       <Name>Unity.2D.Animation.Runtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{688D25D1-EC85-591B-A9AC-8BD9CB364AF3}</Project>
+      <Project>{4175FC37-CA84-8EB6-BBC7-3A725EFBFEB2}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>

@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{688D25D1-EC85-591B-A9AC-8BD9CB364AF3}</ProjectGuid>
+    <ProjectGuid>{4175FC37-CA84-8EB6-BBC7-3A725EFBFEB2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>UnityEngine.UI</AssemblyName>
@@ -85,14 +85,14 @@
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\UI\Core\Layout\ILayoutElement.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\EventSystem\EventData\PointerEventData.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\EventSystem\EventData\AxisEventData.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\EventSystem\EventData\BaseEventData.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\EventSystem\Raycasters\PhysicsRaycaster.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\EventSystem\EventData\BaseEventData.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\UI\Core\SpecializedCollections\IndexedSet.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\UI\Core\IGraphicEnabledDisabled.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\EventSystem\InputModules\BaseInput.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\UI\Core\VertexModifiers\IMeshModifier.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\UI\Core\RawImage.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\UI\Core\Text.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\UI\Core\RawImage.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\UI\Core\Layout\AspectRatioFitter.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\UI\Core\ScrollRect.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui@2.0.0\Runtime\UGUI\EventSystem\InputModules\TouchInputModule.cs" />
@@ -449,10 +449,6 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@2.0.5\net40\unity-custom\nunit.framework.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>Assets\Plugins\MySql.Data.DLL</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
