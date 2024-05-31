@@ -62,13 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Touch.cs" />
-    <Compile Include="Assets\Tile.cs" />
-    <Compile Include="Assets\Blocks.cs" />
-    <Compile Include="Assets\Scripts\GridManager.cs" />
+    <Compile Include="Assets\Scripts\Tile.cs" />
+    <Compile Include="Assets\Scripts\UIRaycastExample.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Detect.cs" />
-    <Compile Include="Assets\Scripts\Touch2.cs" />
+    <Compile Include="Assets\Scripts\GridManager1.cs" />
+    <Compile Include="Assets\Scripts\GamePlay.cs" />
+    <Compile Include="Assets\Scripts\Blocks.cs" />
     <Compile Include="Assets\Scripts\Gamemanager.cs" />
+    <Compile Include="Assets\Scripts\UIRaycaster.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
