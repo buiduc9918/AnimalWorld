@@ -1,5 +1,4 @@
 using Grid;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -21,77 +20,65 @@ namespace Tiles
         public void Select()
         {
             transform.localScale = Vector3.one * 1.3f;
-            StartCoroutine(MoveToPosition(Input.mousePosition));
-
-            if (tile.number == 1)
-            {
-                GridManager.instance.destroy44(seque);
-            }
-            else if (tile.number == 3)
-            {
-                GridManager.instance.destroy55(seque);
-            }
         }
 
-        private void GoAhead()
-        {
-            int rows = GridManager.instance.rows;
-            int cols = GridManager.instance.columns;
+        //private void GoAhead()
+        //{
+        //    int rows = GridManager.instance.rows;
+        //    int cols = GridManager.instance.columns;
 
-            int newRow = (seque.y == 0) ? seque.x - 1 : seque.x;
-            int newCol = (seque.y == 0) ? cols - 1 : seque.y - 1;
+        //    int newRow = (seque.y == 0) ? seque.x - 1 : seque.x;
+        //    int newCol = (seque.y == 0) ? cols - 1 : seque.y - 1;
 
-            if (GridManager.instance.GetGameObjectAt(newRow, newCol) == null)
-            {
-                MoveToNewPosition(newRow, newCol);
-            }
+        //    if (GridManager.instance.GetGameObjectAt(newRow, newCol) == null)
+        //    {
+        //        MoveToNewPosition(newRow, newCol);
+        //    }
 
-            int existingObjectsCount = CountExistingObjects(newRow, newCol, rows, cols);
-            if (existingObjectsCount < 0)
-            {
-                GridManager.instance.Creat(existingObjectsCount < 0);
-            }
-        }
+        //    int existingObjectsCount = CountExistingObjects(newRow, newCol, rows, cols);
+        //    if (existingObjectsCount < 0)
+        //    {
+        //        GridManager.instance.Creat(existingObjectsCount < 0);
+        //    }
+        //}
 
-        private void MoveToNewPosition(int newRow, int newCol)
-        {
-            GameObject go = gameObject;
-            GridManager.instance.grid[newRow, newCol] = go;
-            seque = new Vector2Int(newRow, newCol);
-            go.transform.position = GridManager.instance.pointTiles(newRow, newCol);
-        }
+        //private void MoveToNewPosition(int newRow, int newCol)
+        //{
+        //    GameObject go = gameObject;
+        //    GridManager.instance.grid[newRow, newCol] = go;
+        //    seque = new Vector2Int(newRow, newCol);
+        //    go.transform.position = GridManager.instance.pointTiles(newRow, newCol);
+        //}
 
-        private int CountExistingObjects(int startRow, int startCol, int rows, int cols)
-        {
-            int count = 0;
-            for (int i = 0; i < startRow; i++)
-            {
-                for (int j = 0; j < startCol; j++)
-                {
-                    if (GridManager.instance.grid[i, j] == null)
-                    {
-                        MoveToNewPosition(i, j);
-                    }
-                }
-            }
-            for (int i = startRow; i < rows; i++)
-            {
-                for (int j = startCol; j < cols; j++)
-                {
-                    if (GridManager.instance.grid[i, j] != null)
-                    {
-                        count++;
-                    }
-                }
-            }
-            return count;
-        }
+        //private int CountExistingObjects(int startRow, int startCol, int rows, int cols)
+        //{
+        //    int count = 0;
+        //    for (int i = 0; i < startRow; i++)
+        //    {
+        //        for (int j = 0; j < startCol; j++)
+        //        {
+        //            if (GridManager.instance.grid[i, j] == null)
+        //            {
+        //                MoveToNewPosition(i, j);
+        //            }
+        //        }
+        //    }
+        //    for (int i = startRow; i < rows; i++)
+        //    {
+        //        for (int j = startCol; j < cols; j++)
+        //        {
+        //            if (GridManager.instance.grid[i, j] != null)
+        //            {
+        //                count++;
+        //            }
+        //        }
+        //    }
+        //    return count;
+        //}
 
         public void Unselect()
         {
-            localPosition = transform.position;
             transform.localScale = Vector3.one * 1.5f;
-            StartCoroutine(MoveToPosition(localPosition));
         }
 
         private void SaveClick()
@@ -132,27 +119,6 @@ namespace Tiles
             {
                 SaveClick();
             }
-        }
-
-        private IEnumerator MoveToPosition(Vector3 targetPosition)
-        {
-            float duration = 1.5f;
-            float elapsedTime = 0f;
-            Vector3 initialPosition = transform.position;
-
-            while (elapsedTime < duration)
-            {
-                transform.position = Vector3.Lerp(initialPosition, targetPosition, elapsedTime / duration);
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-
-            transform.position = targetPosition;
-        }
-
-        private void Update()
-        {
-            GoAhead();
         }
     }
 }

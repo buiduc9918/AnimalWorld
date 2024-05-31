@@ -142,35 +142,6 @@ namespace Grid
             return found;
         }
         #endregion
-        #region cheat
-        public IEnumerator destroy44(Vector2Int x)
-        {
-            HashSet<GameObject> tiles = new HashSet<GameObject>();
-            for (int i = 0; i < columns; i++)
-                tiles.Add(GetGameObjectAt(x.x, i));
-            foreach (var tile in tiles)
-                StartCoroutine(AnimateAndDestroyTileSimple(tile));
-            Create();
-            HashSet<GameObject> newMatches = FOUND();
-            if (newMatches.Count > 0)
-                StartCoroutine(RemoveMatchesCoroutine(newMatches));
-            yield return null;
-        }
-        public IEnumerator destroy55(Vector2Int y)
-        {
-            HashSet<GameObject> tiles = new HashSet<GameObject>();
-            for (int i = 0; i < rows; i++)
-                tiles.Add(GetGameObjectAt(i, y.y));
-            foreach (var tile in tiles)
-                StartCoroutine(AnimateAndDestroyTileSimple(tile));
-            Create();
-            HashSet<GameObject> newMatches = FOUND();
-            if (newMatches.Count > 0)
-                StartCoroutine(RemoveMatchesCoroutine(newMatches));
-            yield return null;
-        }
-
-        #endregion
         #region dauvao
         private enum xet
         {
@@ -237,7 +208,6 @@ namespace Grid
                                 newObject.transform.SetParent(transform);
                                 newObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);
                                 newObject.transform.parent = transform;
-                                StartCoroutine(MoveMouse(newObject, locationTiles[index]));
                                 newObject.transform.position = locationTiles[index];
                             }
                         }
@@ -316,29 +286,6 @@ namespace Grid
             tile2.transform.SetSiblingIndex(tempIndex);
         }
         #endregion
-        IEnumerator MoveMouse(GameObject a, Vector3 targetPosition)
-        {
-            if (a == null)
-            {
-                Debug.LogError("GameObject is null!");
-                yield break;
-            }
-
-            float duration = 0.3f;
-            float elapsedTime = 0f;
-            Vector3 initialPosition = a.transform.position;
-
-            while (elapsedTime < duration)
-            {
-                float t = elapsedTime / duration;
-                a.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-
-            // Ensure the object reaches the exact target position
-            a.transform.position = targetPosition;
-        }
 
     }
 }
