@@ -13,27 +13,15 @@ namespace Grid
         public List<GameObject> list;
         public List<GameObject> exspecial;
         [SerializeField] private List<Vector3> locationTiles;
-        public Vector3 pointTiles(int x, int y)
-        {
-            int index = x * columns + y;
-            return locationTiles[index];
-        }
         public GameObject[,] grid;
         public int rows = 4;
         public int columns = 5;
-        public static GridManager instance;
+        public static GridManager Instance;
         [SerializeField] private GridLayoutGroup gridLayoutGroup;
         public float Distance = 100;
         private void Awake()
         {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else if (instance != this)
-            {
-                Destroy(gameObject);
-            }
+            Instance = this;
         }
         Vector3 positionOffset;
 
@@ -51,7 +39,6 @@ namespace Grid
             locationTiles = new List<Vector3>();
             positionOffset = new Vector3(-200, 0, 0) + transform.position - new Vector3(columns * Distance / 2.0f, rows * Distance / 2.0f, 0);
             gridLayoutGroup = GetComponent<GridLayoutGroup>();
-            gridLayoutGroup.constraintCount = rows; // Set to columns instead of rows for GridLayoutGroup
             grid = new GameObject[rows, columns];
             Create();
             if (FOUND().Count > 0)
@@ -142,6 +129,35 @@ namespace Grid
             return found;
         }
         #endregion
+        #region cheat
+        public IEnumerator destroy44(Vector2Int x)
+        {
+            HashSet<GameObject> tiles = new HashSet<GameObject>();
+            for (int i = 0; i < columns; i++)
+                tiles.Add(GetGameObjectAt(x.x, i));
+            foreach (var tile in tiles)
+                StartCoroutine(AnimateAndDestroyTileSimple(tile));
+            Create();
+            HashSet<GameObject> newMatches = FOUND();
+            if (newMatches.Count > 0)
+                StartCoroutine(RemoveMatchesCoroutine(newMatches));
+            yield return null;
+        }
+        public IEnumerator destroy55(Vector2Int y)
+        {
+            HashSet<GameObject> tiles = new HashSet<GameObject>();
+            for (int i = 0; i < rows; i++)
+                tiles.Add(GetGameObjectAt(i, y.y));
+            foreach (var tile in tiles)
+                StartCoroutine(AnimateAndDestroyTileSimple(tile));
+            Create();
+            HashSet<GameObject> newMatches = FOUND();
+            if (newMatches.Count > 0)
+                StartCoroutine(RemoveMatchesCoroutine(newMatches));
+            yield return null;
+        }
+
+        #endregion
         #region dauvao
         private enum xet
         {
@@ -207,7 +223,8 @@ namespace Grid
                                 grid[i, j] = newObject;
                                 newObject.transform.SetParent(transform);
                                 newObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);
-                                newObject.transform.parent = transform;
+                                //   newObject.transform.parent = transform;
+                                //StartCoroutine(MoveMouse(newObject, locationTiles[index]));
                                 newObject.transform.position = locationTiles[index];
                             }
                         }
@@ -224,7 +241,7 @@ namespace Grid
                             grid[i, j] = existingObject;
                             existingObject.transform.SetParent(transform);
                             existingObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);
-                            existingObject.transform.parent = transform;
+                            //existingObject.transform.parent = transform;
                             existingObject.transform.position = locationTiles[index];
                         }
                     }
@@ -246,7 +263,7 @@ namespace Grid
                             grid[i, j] = newObject;
                             newObject.transform.SetParent(transform);
                             newObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);
-                            newObject.transform.parent = transform;
+                            //   newObject.transform.parent = transform;
                             newObject.transform.position = new Vector3(2.3f * j * (Distance), 2.3f * i * Distance, 0) + positionOffset;
                             locationTiles.Add(newObject.transform.position);
                         }
@@ -286,6 +303,29 @@ namespace Grid
             tile2.transform.SetSiblingIndex(tempIndex);
         }
         #endregion
+        //IEnumerator MoveMouse(GameObject a, Vector3 targetPosition)
+        //{
+        //    if (a == null)
+        //    {
+        //        Debug.LogError("GameObject is null!");
+        //        yield break;
+        //    }
+
+        //    float duration = 0.3f;
+        //    float elapsedTime = 0f;
+        //    Vector3 initialPosition = a.transform.position;
+
+        //    while (elapsedTime < duration)
+        //    {
+        //        float t = elapsedTime / duration;
+        //        a.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
+        //        elapsedTime += Time.deltaTime;
+        //        yield return null;
+        //    }
+
+        //    // Ensure the object reaches the exact target position
+        //    a.transform.position = targetPosition;
+        //}
 
     }
 }
