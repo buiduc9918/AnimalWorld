@@ -10,6 +10,9 @@ namespace Grid
 {
     public class GridManager : MonoBehaviour
     {
+        public TMPro.TextMeshProUGUI m_TextMeshPro;
+        private int _score;
+
         public List<GameObject> list;
         public List<GameObject> exspecial;
         [SerializeField] private List<Vector3> locationTiles;
@@ -18,7 +21,11 @@ namespace Grid
         public int columns = 5;
         public static GridManager Instance;
         [SerializeField] private GridLayoutGroup gridLayoutGroup;
-        public float Distance = 100;
+        public float Distance = 120;
+
+        #region START
+
+
         private void Awake()
         {
             Instance = this;
@@ -40,16 +47,34 @@ namespace Grid
             positionOffset = new Vector3(-200, 0, 0) + transform.position - new Vector3(columns * Distance / 2.0f, rows * Distance / 2.0f, 0);
             gridLayoutGroup = GetComponent<GridLayoutGroup>();
             grid = new GameObject[rows, columns];
+            _score = 0;
             Create();
             if (FOUND().Count > 0)
                 StartCoroutine(RemoveMatchesCoroutine(FOUND()));
         }
 
+        public int Score
+        {
+            set
+            {
+                _score = value;
+            }
+            get
+            {
+                if (_score > 300000 && _score < 454000)
+                {
+                    m_TextMeshPro.text = $"Deliciuos";
+                }
+                else m_TextMeshPro.text = $"{_score}";
+                return _score;
+            }
+        }
+        //  Score++;
         private IEnumerator RemoveMatchesCoroutine(HashSet<GameObject> matches)
         {
             foreach (var tile in matches)
                 StartCoroutine(AnimateAndDestroyTileSimple(tile));
-            yield return new WaitForSeconds(1.5f); // wait for animations to complete
+            yield return new WaitForSeconds(1f); // wait for animations to complete
             Create();
             HashSet<GameObject> newMatches = FOUND();
             if (newMatches.Count > 0)
@@ -57,20 +82,32 @@ namespace Grid
         }
         private IEnumerator AnimateAndDestroyTileSimple(GameObject tile)
         {
-            float duration = 1.5f;
+            float duration = 1.2f;
             float elapsedTime = 0f;
             Vector3 initialScale = tile.transform.localScale;
             while (elapsedTime < duration)
             {
-                tile.transform.Rotate(Vector3.left * Time.deltaTime * 5);
-                tile.transform.localScale = Vector3.Lerp(initialScale, Vector3.zero, elapsedTime / duration);
-                elapsedTime += Time.deltaTime;
-                yield return null;
+                if (tile != null)
+                {
+                    tile.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * 180);
+                    tile.transform.localScale = Vector3.Lerp(initialScale, Vector3.zero, elapsedTime / duration);
+                    elapsedTime += Time.deltaTime;
+                    yield return null;
+                }
+                else
+                {
+                    elapsedTime += Time.deltaTime;
+                    yield return null;
+                }
             }
-            Destroy(tile.gameObject);
+            if (tile != null)
+            {
+                Destroy(tile);
+            }
         }
+        #endregion
+        #region FOUND
 
-        #region found
 
         private HashSet<GameObject> FOUND()
         {
@@ -126,10 +163,12 @@ namespace Grid
                     }
                 }
             }
+            Score += 10000;
             return found;
         }
         #endregion
-        #region cheat
+        #region BUFF
+
         public IEnumerator destroy44(Vector2Int x)
         {
             HashSet<GameObject> tiles = new HashSet<GameObject>();
@@ -158,7 +197,9 @@ namespace Grid
         }
 
         #endregion
-        #region dauvao
+        #region INIT
+
+
         private enum xet
         {
             khoitao,
@@ -180,17 +221,6 @@ namespace Grid
             else if (test == 0)
                 a = xet.khoitao;
             Create(a);
-        }
-        public void Creat(bool x)
-        {
-            if (x)
-            {
-                Create(xet.nho);
-            }
-            else
-            {
-                Create();
-            }
         }
         private void Create(xet a)
         {
@@ -220,12 +250,10 @@ namespace Grid
                                 if (k.Count == 0)
                                     k = new List<GameObject>(list); // If k is empty, reset to the full list to avoid errors
                                 GameObject newObject = Instantiate(k[Random.Range(0, k.Count)]);
-                                grid[i, j] = newObject;
+                                grid[i, j] = newObject;// O TRONG LUOI TUONG UNG
                                 newObject.transform.SetParent(transform);
-                                newObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);
-                                //   newObject.transform.parent = transform;
-                                //StartCoroutine(MoveMouse(newObject, locationTiles[index]));
-                                newObject.transform.position = locationTiles[index];
+                                newObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);// XAC DINH THEO O
+                                newObject.transform.position = locationTiles[index];// XAC DINH DUNG THEO VI TRI O
                             }
                         }
                     }
@@ -241,8 +269,7 @@ namespace Grid
                             grid[i, j] = existingObject;
                             existingObject.transform.SetParent(transform);
                             existingObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);
-                            //existingObject.transform.parent = transform;
-                            existingObject.transform.position = locationTiles[index];
+                            existingObject.transform.position = locationTiles[index];//XAC DINH THEO VI TRI O
                         }
                     }
                     break;
@@ -263,8 +290,7 @@ namespace Grid
                             grid[i, j] = newObject;
                             newObject.transform.SetParent(transform);
                             newObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);
-                            //   newObject.transform.parent = transform;
-                            newObject.transform.position = new Vector3(2.3f * j * (Distance), 2.3f * i * Distance, 0) + positionOffset;
+                            newObject.transform.position = new Vector3(2 * j * (Distance), 2 * i * Distance, 0) + positionOffset;
                             locationTiles.Add(newObject.transform.position);
                         }
                     }
