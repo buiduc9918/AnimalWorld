@@ -1,69 +1,81 @@
-using Grid;
+﻿using Grid;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Tiles
 {
-    public class Blocks : MonoBehaviour, IPointerDownHandler
+    public class Blocks : MonoBehaviour, IPointerClickHandler
     {
         public Vector2Int seque;
-        private Vector3 localPosition;
-
-        public static Blocks Selected { get; private set; }
-
-        private void Awake()
+        public static Blocks Selected;
+        public void Awake()
         {
-            Selected = this;
+            if (Selected == null)
+            {
+                Selected = this;
+            }
         }
-
         public void Select()
         {
             transform.localScale = Vector3.one * 1.3f;
         }
+
         public void Unselect()
         {
             transform.localScale = Vector3.one * 1.5f;
         }
 
-        private void SaveClick()
+        public void OnPointerClick(PointerEventData eventData)
         {
-            Selected = this;
-            Select();
-        }
+            //{
+            //    if (eventData.pointerClick.gameObject.GetComponent<Tile>().number == 1)
+            //    {
+            //        GridManager.Instance.cheat1(eventData.pointerClick.gameObject.GetComponent<Blocks>().seque.x);
+            //        Destroy(gameObject);
+            //        GridManager.Instance.Create();
+            //    }
+            //    if (eventData.pointerClick.gameObject.GetComponent<Tile>().number == 2)
+            //    {
+            //        GridManager.Instance.cheat2(eventData.pointerClick.gameObject.GetComponent<Blocks>().seque.y);
+            //        Destroy(gameObject);
+            //        GridManager.Instance.Create();
 
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            if (eventData.button == PointerEventData.InputButton.Left)
-            {
-                HandleLeftClick();
-            }
-        }
-
-        private void HandleLeftClick()
-        {
+            //    }
             if (Selected != null)
             {
-                if (Selected == this)
-                    return;
-
                 Selected.Unselect();
-
-                if (Vector2Int.Distance(Selected.seque, seque) == 1)
+                if (Selected != this)
                 {
-
-                    GridManager.Instance.SwapTiles(Selected.seque, seque);
-                    Selected = this;
-                    Select();
+                    if (Vector2Int.Distance(Selected.seque, seque) == 1)
+                    {
+                        GridManager.Instance.SwapTiles(seque, Selected.seque);
+                    }
+                    {
+                        Selected = this;
+                        Select();
+                    }
                 }
-                else
+                if (eventData.pointerClick.gameObject.GetComponent<Tile>().number == 1)
                 {
-                    SaveClick();
+                    GridManager.Instance.cheat1(eventData.pointerClick.gameObject.GetComponent<Blocks>().seque.x);
+                    Destroy(gameObject);
+                    GridManager.Instance.Create();
+                }
+                if (eventData.pointerClick.gameObject.GetComponent<Tile>().number == 2)
+                {
+                    GridManager.Instance.cheat2(eventData.pointerClick.gameObject.GetComponent<Blocks>().seque.y);
+                    Destroy(gameObject);
+                    GridManager.Instance.Create();
+
                 }
             }
             else
             {
-                SaveClick();
+
+                Selected = this;
+                Select();
             }
+            GridManager.Instance.Create();
         }
     }
 }

@@ -2048,13 +2048,14 @@ MonoBehaviour:
   - {fileID: 6282546399539911739, guid: 91a01c882ae2872438b71a40afe30be9, type: 3}
   - {fileID: 4222852603550262726, guid: dc633ea8318fd5c4f8ae15bdaf06196d, type: 3}
   - {fileID: 5301831431322033848, guid: 130eed2def108d141839bbeddf4eaa1c, type: 3}
-  exspecial: []
+  exspecial:
+  - {fileID: 455335995735243699, guid: a475e126d7b025c4a9d4fd0db3bd6a27, type: 3}
+  - {fileID: 3614557876647245793, guid: a87e82c11ecc8274bb9f6cc012545a6b, type: 3}
   locationTiles: []
-  rows: 4
-  columns: 5
+  rows: 7
+  columns: 7
   gridLayoutGroup: {fileID: 5811603728261524460}
   Distance: 100
-  a: 0
 --- !u!1 &1539729351365447142
 GameObject:
   m_ObjectHideFlags: 0
