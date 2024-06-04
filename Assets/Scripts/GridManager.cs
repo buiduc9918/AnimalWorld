@@ -226,6 +226,94 @@ namespace Grid
         {
             switch (a)
             {
+                // Case xet.lon has been commented out
+
+                case xet.nho:
+                    for (int i = 0; i < rows; i++)
+                    {
+                        for (int j = 0; j < columns; j++)
+                        {
+                            GameObject l = grid[i, j];
+                            if (l != null)
+                                continue;
+
+                            // Create a new list of GameObjects to choose from
+                            List<GameObject> k = new List<GameObject>(list);
+
+                            // Remove GameObjects that would create a sequence of three in a row vertically
+                            if (i > 1 && grid[i - 1, j] != null && grid[i - 2, j] != null &&
+                                grid[i - 1, j].GetComponent<Tile>().number == grid[i - 2, j].GetComponent<Tile>().number)
+                            {
+                                k.Remove(grid[i - 1, j]);
+                            }
+
+                            // Remove GameObjects that would create a sequence of three in a row horizontally
+                            if (j > 1 && grid[i, j - 1] != null && grid[i, j - 2] != null &&
+                                grid[i, j - 1].GetComponent<Tile>().number == grid[i, j - 2].GetComponent<Tile>().number)
+                            {
+                                k.Remove(grid[i, j - 1]);
+                            }
+
+                            if (k.Count == 0)
+                                k = new List<GameObject>(list); // Reset to full list if all objects are removed
+
+                            // Instantiate a new GameObject from the list
+                            GameObject newObject = Instantiate(k[Random.Range(0, k.Count)]);
+                            grid[i, j] = newObject;
+                            newObject.transform.parent = transform;
+                            newObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);
+                            newObject.transform.position = new Vector3(2 * j * Distance, 2 * i * Distance, 0) + positionOffset;
+                        }
+                    }
+                    break;
+
+                // Case xet.bang has been commented out
+
+                case xet.khoitao:
+                    for (int i = 0; i < rows; i++)
+                    {
+                        for (int j = 0; j < columns; j++)
+                        {
+                            List<GameObject> k = new List<GameObject>(list);
+
+                            // Remove GameObjects that would create a sequence of three in a row vertically
+                            if (i > 1 && grid[i - 1, j] != null && grid[i - 2, j] != null &&
+                                grid[i - 1, j].GetComponent<Tile>().number == grid[i - 2, j].GetComponent<Tile>().number)
+                            {
+                                k.Remove(grid[i - 1, j]);
+                            }
+
+                            // Remove GameObjects that would create a sequence of three in a row horizontally
+                            if (j > 1 && grid[i, j - 1] != null && grid[i, j - 2] != null &&
+                                grid[i, j - 1].GetComponent<Tile>().number == grid[i, j - 2].GetComponent<Tile>().number)
+                            {
+                                k.Remove(grid[i, j - 1]);
+                            }
+
+                            if (k.Count == 0)
+                                k = new List<GameObject>(list); // Reset to full list if all objects are removed
+
+                            // Instantiate a new GameObject from the list
+                            GameObject newObject = Instantiate(k[Random.Range(0, k.Count)]);
+                            grid[i, j] = newObject;
+                            newObject.transform.parent = transform;
+                            newObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);
+                            newObject.transform.position = new Vector3(2 * j * Distance, 2 * i * Distance, 0) + positionOffset;
+                        }
+                    }
+                    break;
+                case xet.lon:
+                    break;
+                case xet.bang:
+                    break;
+            }
+        }
+        #region Creat Old
+        /*
+        private void Create(xet a)
+        {
+            switch (a)
+            {
                 case xet.lon:
                     if (transform.GetChild(rows * columns) != null)
                         DestroyImmediate(transform.GetChild(transform.childCount - 1).gameObject);
@@ -253,6 +341,7 @@ namespace Grid
                                 grid[i, j] = newObject;// O TRONG LUOI TUONG UNG
                                 newObject.transform.SetParent(transform);
                                 newObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);// XAC DINH THEO O
+                                newObject.transform.position = new Vector3(2 * j * (Distance), 2 * i * Distance, 0) + positionOffset;                                                        
                                 newObject.transform.position = locationTiles[index];// XAC DINH DUNG THEO VI TRI O
                             }
                         }
@@ -269,7 +358,7 @@ namespace Grid
                             grid[i, j] = existingObject;
                             existingObject.transform.SetParent(transform);
                             existingObject.GetComponent<Blocks>().seque = new Vector2Int(i, j);
-                            existingObject.transform.position = locationTiles[index];//XAC DINH THEO VI TRI O
+                            existingObject.transform.position = new Vector3(2 * j * (Distance), 2 * i * Distance, 0) + positionOffset= locationTiles[index];//XAC DINH THEO VI TRI O
                         }
                     }
                     break;
@@ -298,6 +387,8 @@ namespace Grid
             }
 
         }
+        */
+        #endregion
         #endregion
         #region SWAP
         public void SwapTiles(Vector2Int pos1, Vector2Int pos2)
