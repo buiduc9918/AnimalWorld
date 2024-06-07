@@ -4,51 +4,52 @@ using UnityEngine.EventSystems;
 
 namespace Tiles
 {
-    public class Blocks : MonoBehaviour, IPointerClickHandler
+    public class Blocks : MonoBehaviour, IPointerDownHandler
     {
         public Vector2Int seque;
         public static Blocks Selected;
-
-
+        Vector3 vector3;
+        private void Start() => vector3 = transform.localScale;
         public void Select()
         {
             transform.localScale = Vector3.one * 1.3f;
+            Debug.Log($"Vị trí chọn object: {seque}, tên của nó : {this.name}");
         }
-
-        public void Unselect()
+        public void Unselect() => transform.localScale = vector3; // Set it back to original size
+        public void OnPointerDown(PointerEventData eventData)
         {
-            transform.localScale = Vector3.one * 1.5f; // Set it back to original size
-        }
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            if (Selected != null)
+            if (Input.touchCount > 0 && Input.touchCount <= 1)
             {
-                Selected.Unselect();
-                if (Selected != this)
+                Touch touch = Input.GetTouch(0);
+                if (Selected != null)
                 {
-                    if (Vector2Int.Distance(Selected.seque, seque) == 1)
+                    Selected.Unselect();
+                    if (Selected != this)
                     {
-                        Debug.Log("Swapping tiles: " + Selected.seque + " with " + seque);
-                        GridManager.Instance.SwapTiles(seque, Selected.seque);
+                        if (Vector2Int.Distance(Selected.seque, seque) == 1)
+                        {
+                            Debug.Log(" Đổi 2 vị trí là : " + Selected.seque + " .Tên của nó là : " + Selected.name + "  Và " + seque + " Tên của nó là : " + this.name);
+                            GridManager.Instance.SwapTiles(seque, Selected.seque);
+                        }
+                        else
+                        {
+                            Selected = this;
+                            Select();
+                        }
                     }
-                    Selected = this;
-                    Select();
+                    else
+                    {
+                        Debug.Log("Không thể thay đổi 2 game object này");
+                        Selected = this;
+                        Select();
+                    }
                 }
                 else
                 {
-                    Debug.Log("Unselecting previously selected tile.");
-                    // If clicking the same tile, unselect it
-                    Selected = null;
+                    Selected = this;
+                    Select();
                 }
             }
-            else
-            {
-                Selected = this;
-                Select();
-            }
-
-            GridManager.Instance.Create();
         }
     }
 }
