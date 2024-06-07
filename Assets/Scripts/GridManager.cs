@@ -325,6 +325,7 @@ namespace Grid
         {
             foreach (var tile in matches)
             {
+                yield return new WaitForSeconds(0.1f);
                 StartCoroutine(AnimateAndDestroyTileSimple(tile));
             }
             yield return new WaitForSeconds(2.0f); // wait for animations to complete
@@ -376,7 +377,7 @@ namespace Grid
         }
         private IEnumerator AnimateAndDestroyTileSimple(GameObject tile)
         {
-            float duration = 0.5f;
+            float duration = 1.5f;
             float elapsedTime = 0f;
             Vector3 initialScale = tile.transform.localScale;
             while (elapsedTime < duration)
