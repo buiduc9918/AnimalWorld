@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
 
@@ -8,25 +9,27 @@ namespace GameManager
 
     public class Gamemanager : MonoBehaviour
     {
-        // Start is called before the first frame update
-        //public static Gamemanager Instance;
-
-        //public void Awake()
-        //{
-        //    if (Instance != null) DestroyImmediate(gameObject);
-        //    else
-        //    {
-        //        Instance = this;
-        //        DontDestroyOnLoad(gameObject);
-        //    }
-        //}
-
-        //public void OnDestroy()
-        //{
-        //    if (Instance == this) Instance = null;
-        //}
+        public static Gamemanager Instance;
+        public GameObject Table;
+        public List<GameObject> childs;
+        public void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else if (Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            DontDestroyOnLoad(gameObject);
+            childs = new List<GameObject>();
+        }
         void Start()
         {
+
+            // childs = Table.GetComponentInChildren<GameObject>().gameObject;
             //product_info.xml
             ItemData[] skill = new ItemData[4];
             skill[0] = new ItemData(); // Khởi tạo các phần tử của mảng
@@ -57,12 +60,11 @@ namespace GameManager
             }
             for (int i = 0; i < 4; i++)
             {
-                //Debug.Log("Name: " + loadedItemData[i].name);
-                //Debug.Log("Description: " + loadedItemData[i].description);
-                //Debug.Log("Number: " + loadedItemData[i].number);
+                Debug.Log("Name: " + loadedItemData[i].name);
+                Debug.Log("Description: " + loadedItemData[i].description);
+                Debug.Log("Number: " + loadedItemData[i].number);
             }
         }
-
         [System.Serializable]
         public class ProductData
         {
@@ -108,7 +110,6 @@ namespace GameManager
             serializer.Serialize(stream, productData);
             stream.Close();
         }
-
         ProductData LoadProductDataFromXML(string filePath)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(ProductData));
@@ -124,7 +125,6 @@ namespace GameManager
             serializer.Serialize(stream, playerData);
             stream.Close();
         }
-
         PlayerData LoadPlayerDataFromXML(string filePath)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(PlayerData));
